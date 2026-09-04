@@ -1,0 +1,55 @@
+/**
+ * Aruginil base styles.
+ * Scoped under `.lf-scope` (applied on the app's root element in
+ * LocalFindPageShell) so these rules never leak outside the app.
+ * Imported once, from src/index.css.
+ */
+
+.lf-scope {
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.lf-scope h1,
+.lf-scope h2,
+.lf-scope h3,
+.lf-scope h4,
+.lf-scope .font-syne {
+  font-family: "Syne", sans-serif;
+}
+
+.lf-scope ::selection {
+  background-color: #7c3aed;
+  color: white;
+}
+
+.lf-scope a:focus-visible,
+.lf-scope button:focus-visible,
+.lf-scope input:focus-visible,
+.lf-scope select:focus-visible,
+.lf-scope textarea:focus-visible,
+.lf-scope [tabindex]:focus-visible {
+  outline: 2px solid #6d28d9;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.lf-scope .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.lf-scope .no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lf-scope *,
+  .lf-scope *::before,
+  .lf-scope *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

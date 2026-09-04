@@ -1,0 +1,62 @@
+import type { Business } from "../../../../types/business";
+
+export const dindigulBeautyParlourBusinesses: Business[] = [
+
+  {
+    id: "dindigul-beauty-parlour-keerthi-beauty-parlour",
+    name: "Keerthi Beauty Parlour",
+    slug: "keerthi-beauty-parlour",
+    city: "Dindigul",
+    citySlug: "dindigul",
+    category: "Beauty Parlour",
+    categorySlug: "beauty-parlour",
+    description:
+      "Keerthi Ladies Top to Toe Beauty Clinic & Institute of Beauty Culture and Hairstyles is a beauty parlour and training institute in Dindigul, near the bus stand.",
+    services: ["Hair Care", "Skin & Beauty Treatments"],
+    address: "47, Spencer Compound, near Bus Stand, Dindigul – 624003",
+    phone: null,
+    email: null,
+    website: "https://www.keerthisbeauty.com/",
+    image: "/assets/localfind/beauty-parlour.svg",
+    openingHours: null,
+    featured: false,
+  },
+
+  {
+    id: "dindigul-beauty-parlour-suganthi-ladies-beauty-parlour",
+    name: "Suganthi Ladies Beauty Parlour",
+    slug: "suganthi-ladies-beauty-parlour",
+    city: "Dindigul",
+    citySlug: "dindigul",
+    category: "Beauty Parlour",
+    categorySlug: "beauty-parlour",
+    description: "Suganthi Ladies Beauty Parlour is a women's beauty parlour in Dindigul Bazaar, Dindigul.",
+    services: ["Hair Care", "Skin & Beauty Treatments"],
+    address: "Near RR Kalyana Mandapam, Dindigul Bazaar, Dindigul",
+    phone: null,
+    email: null,
+    website: null,
+    image: "/assets/localfind/beauty-parlour.svg",
+    openingHours: null,
+    featured: false,
+  },
+
+  {
+    id: "dindigul-beauty-parlour-royal-touch-ladies-beauty-parlour",
+    name: "Royal Touch Ladies Beauty Parlour",
+    slug: "royal-touch-ladies-beauty-parlour",
+    city: "Dindigul",
+    citySlug: "dindigul",
+    category: "Beauty Parlour",
+    categorySlug: "beauty-parlour",
+    description: "Royal Touch Ladies Beauty Parlour is a beauty parlour on East Car Street in Dindigul.",
+    services: ["Hair Care", "Bridal Makeup"],
+    address: "East Car Street, Dindigul",
+    phone: null,
+    email: null,
+    website: null,
+    image: "/assets/localfind/beauty-parlour.svg",
+    openingHours: null,
+    featured: false,
+  },
+];

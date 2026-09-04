@@ -1,0 +1,92 @@
+import type { Business } from "../../../../types/business";
+
+export const karaikudiBeautyParlourBusinesses: Business[] = [
+
+  {
+    id: "karaikudi-beauty-parlour-glitter-girls-beauty-parlour",
+    name: "Glitter Girls Beauty Parlour",
+    slug: "glitter-girls-beauty-parlour",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "Beauty Parlour",
+    categorySlug: "beauty-parlour",
+    description:
+      "Glitter Girls Beauty Parlour is a beauty salon in Karaikudi offering hair, skin and bridal makeover services, and also runs a training centre for skin, hair, nail, saree draping and bridal makeup courses.",
+    services: ["Bridal Makeup", "Hair Care", "Skin & Beauty Treatments"],
+    address: "No. 18/5, Feet Road, Subiramaniyapuram, opp. Gubera Tower, Karaikudi – 630002",
+    phone: "+91 72007 67572",
+    email: "glittergirls182023@gmail.com",
+    website: "https://www.glittergirlsbeautyparlour.com/",
+    image: "/assets/localfind/businesses/karaikudi-beautyparlour/glittergirlsbeautyparlour-logo.png",
+    openingHours: null,
+    featured: false,
+  },
+
+  {
+    id: "karaikudi-beauty-parlour-sashika-beauty-parlour",
+    name: "Sashika Beauty Parlour",
+    slug: "sashika-beauty-parlour",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "Beauty Parlour",
+    categorySlug: "beauty-parlour",
+    description:
+      "Sashika Beauty Parlour has been operating in Karaikudi since 2004, offering ladies-only beauty and relaxation services under proprietor Mrs. Nithya.",
+    services: ["Hair Care", "Skin & Beauty Treatments"],
+    address: null,
+    phone: null,
+    email: null,
+    website: "https://www.shashikabeautyparlourkaraikudi.com/",
+    image: "/assets/localfind/beauty-parlour.svg",
+    openingHours: null,
+    featured: false,
+  },
+
+  {
+    id: "karaikudi-beauty-parlour-sri-sai-ladies-beauty-salon",
+    name: "Sri Sai Ladies Beauty Salon",
+    slug: "sri-sai-ladies-beauty-salon",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "Beauty Parlour",
+    categorySlug: "beauty-parlour",
+    description:
+      "Sri Sai Ladies Beauty Salon offers hair care, makeup, spa, mehendi, nail art and skin/body care services in Karaikudi.",
+    services: ["Bridal Makeup", "Hair Care", "Manicure & Pedicure", "Mehendi"],
+    address: "C.S.J Ananda Complex, K.AL.RM. Street, near Old Ayyappa, Karaikudi",
+    phone: "+91 96291 24095",
+    email: "srisaibeautyparlour18@gmail.com",
+    website: "https://www.srisaibeautyparlour.com/",
+    image: "/assets/localfind/beauty-parlour.svg",
+    openingHours: [
+      { day: "Monday", hours: "9:00 AM – 8:00 PM" },
+      { day: "Tuesday", hours: "9:00 AM – 8:00 PM" },
+      { day: "Wednesday", hours: "9:00 AM – 8:00 PM" },
+      { day: "Thursday", hours: "9:00 AM – 8:00 PM" },
+      { day: "Friday", hours: "9:00 AM – 8:00 PM" },
+      { day: "Saturday", hours: "9:00 AM – 8:00 PM" },
+      { day: "Sunday", hours: "9:00 AM – 8:00 PM" },
+    ],
+    featured: false,
+  },
+
+  {
+    id: "karaikudi-beauty-parlour-rathika-ladies-beauty-parlour",
+    name: "Rathika Ladies Beauty Parlour",
+    slug: "rathika-ladies-beauty-parlour",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "Beauty Parlour",
+    categorySlug: "beauty-parlour",
+    description:
+      "Rathika Ladies Beauty Parlour is a women's beauty parlour listed in the Aruna Nagar area of Karaikudi.",
+    services: ["Hair Care", "Skin & Beauty Treatments"],
+    address: "3433, Madhavi Street, Nava Rathna Nagar, Aruna Nagar, Karaikudi – 630001, Tamil Nadu",
+    phone: null,
+    email: null,
+    website: null,
+    image: "/assets/localfind/beauty-parlour.svg",
+    openingHours: null,
+    featured: false,
+  },
+];

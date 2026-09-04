@@ -1,0 +1,13 @@
+# SPA fallback for routes that are valid (resolve via resolveListing/
+# resolveBusiness at runtime) but weren't worth prerendering as a
+# static file — specifically, city/category combinations with zero
+# real businesses yet (see scripts/prerender-localfind.mjs). Without
+# this, a direct visit or refresh on one of those URLs would 404 on
+# a static host instead of loading the app and rendering the real
+# (empty-state, noindex) page client-side.
+#
+# Prerendered pages (the home page, every listing page with real
+# businesses, every business page) are real files and are served
+# directly — this rule only ever applies as a fallback for paths that
+# don't match an actual file, so it never overrides them.
+/*    /index.html   200

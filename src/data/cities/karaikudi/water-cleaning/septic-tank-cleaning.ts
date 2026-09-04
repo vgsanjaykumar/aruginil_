@@ -1,0 +1,62 @@
+import type { Business } from "../../../../types/business";
+
+export const karaikudiSepticTankCleaningBusinesses: Business[] = [
+
+  {
+    id: "karaikudi-septic-tank-cleaning-hari-septic-tank-cleaning",
+    name: "Hari Septic Tank Cleaning",
+    slug: "hari-septic-tank-cleaning",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "Septic Tank Cleaning",
+    categorySlug: "septic-tank-cleaning",
+    description:
+      "Hari Septic Tank Cleaning is a Karaikudi-based septic tank cleaning service that states it uses trained staff and safety equipment to clean and disinfect septic tanks.",
+    services: ["Septic Tank Cleaning"],
+    address: null,
+    phone: null,
+    email: null,
+    website: "https://www.hariseptictankclinic.com/",
+    image: "/assets/localfind/septic-tank-cleaning.svg",
+    openingHours: null,
+    featured: false,
+  },
+
+  {
+    id: "karaikudi-septic-tank-cleaning-siva-septic-tank-cleaners",
+    name: "Siva Septic Tank Cleaners",
+    slug: "siva-septic-tank-cleaners",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "Septic Tank Cleaning",
+    categorySlug: "septic-tank-cleaning",
+    description: "Siva Septic Tank Cleaners is a septic tank cleaning service listed in the Aruna Nagar area of Karaikudi.",
+    services: ["Septic Tank Cleaning"],
+    address: "Aruna Nagar, Karaikudi",
+    phone: null,
+    email: null,
+    website: null,
+    image: "/assets/localfind/septic-tank-cleaning.svg",
+    openingHours: null,
+    featured: false,
+  },
+
+  {
+    id: "karaikudi-septic-tank-cleaning-k-muthumari-septic-tank-cleaning",
+    name: "K. Muthumari Septic Tank Cleaning",
+    slug: "k-muthumari-septic-tank-cleaning",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "Septic Tank Cleaning",
+    categorySlug: "septic-tank-cleaning",
+    description: "K. Muthumari Septic Tank Cleaning is a septic tank cleaning service based near Burma Colony in Karaikudi.",
+    services: ["Septic Tank Cleaning"],
+    address: "Near petrol bunk, opposite Burma Colony, Karaikudi – 630001, Tamil Nadu",
+    phone: null,
+    email: null,
+    website: null,
+    image: "/assets/localfind/septic-tank-cleaning.svg",
+    openingHours: null,
+    featured: false,
+  },
+];

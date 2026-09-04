@@ -1,0 +1,62 @@
+import type { Business } from "../../../../types/business";
+
+export const karaikudiRoWaterPurifierBusinesses: Business[] = [
+
+  {
+    id: "karaikudi-ro-water-purifier-Sri-Vel-Engineering-",
+    name: "Sri Vel Engineering Works",
+    slug: "sri-vel-engineering-works",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "RO Water Purifier",
+    categorySlug: "ro-water-purifier",
+    description:
+      "Sri Vel Engineering Works sells and services residential and industrial RO and UV water purifiers and water softeners, and states 28 years in the business.",
+    services: ["RO Installation", "AMC Plans"],
+    address: null,
+    phone: null,
+    email: null,
+    website: null,
+    image: "/assets/localfind/businesses/ro-water-karaikudi/sri-vel.png",
+    openingHours: null,
+    featured: false,
+  },
+
+  {
+    id: "karaikudi-ro-water-purifier-pureit-ro-sales-and-services",
+    name: "Pureit RO Sales & Services",
+    slug: "pureit-ro-sales-and-services",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "RO Water Purifier",
+    categorySlug: "ro-water-purifier",
+    description: "Pureit RO Sales & Services sells and services RO water purifiers from College Road in Karaikudi.",
+    services: ["RO Installation", "Repair Service"],
+    address: "College Road, Karaikudi – 630001",
+    phone: null,
+    email: null,
+    website: null,
+    image: "/assets/localfind/ro-water-purifier.svg",
+    openingHours: null,
+    featured: false,
+  },
+
+  {
+    id: "karaikudi-ro-water-purifier-hi-tech-aqua-tech",
+    name: "Hi-Tech Aqua Tech",
+    slug: "hi-tech-aqua-tech",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "RO Water Purifier",
+    categorySlug: "ro-water-purifier",
+    description: "Hi-Tech Aqua Tech provides water purifier sales and service from Uyyakondan Malai in Karaikudi.",
+    services: ["RO Installation", "Repair Service"],
+    address: "Uyyakondan Malai, Karaikudi",
+    phone: null,
+    email: null,
+    website: null,
+    image: "/assets/localfind/ro-water-purifier.svg",
+    openingHours: null,
+    featured: false,
+  },
+];
