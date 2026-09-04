@@ -107,6 +107,72 @@ file — see `src/pages/localfind/LocationCategory.jsx` and
 `scripts/prerender-localfind.mjs`. This avoids generating hundreds of
 thin, empty SEO pages while keeping every valid route usable.
 
+### A business that genuinely belongs to more than one category
+
+Some categories overlap — a photographer might do both general
+"Photography Services" and "Wedding Photography"; a block
+manufacturer might sell both "Hollow Blocks" and "Paver Blocks". A
+business like that should still be **one** record, not duplicated.
+
+Add the optional `categorySlugs` array alongside the required primary
+`categorySlug`:
+
+```ts
+{
+  id: "karaikudi-photography-services-abc-photography",
+  name: "ABC Photography",
+  citySlug: "karaikudi",
+  category: "Photography Services",
+  categorySlug: "photography-services",   // primary — drives the canonical URL
+  categorySlugs: ["wedding-photography"], // genuine secondary association(s)
+  // ...rest of the fields as normal
+}
+```
+
+- The business appears on **both** `/karaikudi/photography-services`
+  and `/karaikudi/wedding-photography`, and is counted in both
+  categories' totals.
+- It still has exactly **one** canonical detail URL —
+  `/karaikudi/photography-services/abc-photography` — based on the
+  primary `categorySlug`. Visiting it via the secondary category's URL
+  pattern doesn't resolve; only the canonical URL does. This is
+  intentional (avoids duplicate/competing indexed pages for the same
+  business).
+- Only add a category to `categorySlugs` when there's real evidence
+  the business genuinely offers that category's service — never as a
+  guess ("most photographers probably also do weddings" is not
+  evidence).
+- Existing businesses with just `categorySlug` (no `categorySlugs`)
+  keep working exactly as before — this is a purely additive field.
+
+### A business doesn't need its own website to be listed
+
+`website` has always been `string | null` — a business without one is
+already handled gracefully in the UI (it shows a "Get Directions" /
+Maps link instead of a website link). Beyond that, a few more optional
+fields exist for when a website isn't the business's primary public
+presence:
+
+```ts
+{
+  // ...required fields as normal
+  website: null,                                    // no official site — that's fine
+  googleUrl: "https://maps.google.com/?cid=...",     // Google Business Profile / Maps listing
+  instagramUrl: "https://instagram.com/example",
+  facebookUrl: "https://facebook.com/example",
+  verificationSource: "Google Business Profile",     // where you confirmed these details
+}
+```
+
+None of these are required. Use whichever ones you actually have
+reliable public evidence for — a business only needs *one* verifiable
+public presence (website, Google Business Profile, Instagram, or
+Facebook) to be eligible for a listing, not all four. `verificationSource`
+is purely informational (not rendered as a "verified" badge) — it's
+just a note to your future self about where the details came from.
+When `googleUrl` is set, the business detail page uses it directly
+instead of a generic "search by address" Maps link.
+
 ## Typography
 
 Two Google Fonts only: **Syne** (headings, brand, business names —

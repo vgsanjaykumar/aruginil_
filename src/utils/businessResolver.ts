@@ -6,8 +6,22 @@ import type { Business, Category, City } from "../types/business";
 
 export { getCityBySlug, getCategoryBySlug };
 
+/**
+ * Single source of truth for "does this business belong to this
+ * category" — checks the primary `categorySlug` first (covers every
+ * existing business unchanged), then falls back to the optional
+ * `categorySlugs` array for businesses with genuine secondary
+ * category associations. Every place that filters, counts, or
+ * searches businesses by category should use this rather than a
+ * direct `=== categorySlug` check, so multi-category businesses are
+ * handled consistently everywhere.
+ */
+export function businessBelongsToCategory(business: Business, categorySlug: string): boolean {
+  return business.categorySlug === categorySlug || (business.categorySlugs?.includes(categorySlug) ?? false);
+}
+
 export function getBusinessesByCityAndCategory(citySlug: string, categorySlug: string): Business[] {
-  return businesses.filter((b) => b.citySlug === citySlug && b.categorySlug === categorySlug);
+  return businesses.filter((b) => b.citySlug === citySlug && businessBelongsToCategory(b, categorySlug));
 }
 
 export function getBusinessBySlug(
@@ -172,6 +186,27 @@ function validateBusinessData(): string[] {
       errors.push(
         `Business "${b.id}" is filed under ${b.citySlug}/${b.categorySlug}, but ${city.name} doesn't list "${b.categorySlug}" in availableCategories`
       );
+    }
+
+    // Secondary category associations (categorySlugs) — same checks as
+    // the primary categorySlug, plus: the primary shouldn't be
+    // redundantly repeated in the secondary list.
+    if (b.categorySlugs) {
+      for (const secondarySlug of b.categorySlugs) {
+        if (secondarySlug === b.categorySlug) {
+          errors.push(
+            `Business "${b.id}": "${secondarySlug}" in categorySlugs duplicates the primary categorySlug — remove it, the primary is always included`
+          );
+        }
+        if (!getCategoryBySlug(secondarySlug)) {
+          errors.push(`Business "${b.id}" has invalid category "${secondarySlug}" in categorySlugs`);
+        }
+        if (city && !city.availableCategories.includes(secondarySlug)) {
+          errors.push(
+            `Business "${b.id}": secondary category "${secondarySlug}" isn't available in ${city.name}`
+          );
+        }
+      }
     }
   }
 

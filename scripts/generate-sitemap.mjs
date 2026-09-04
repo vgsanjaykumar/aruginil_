@@ -38,7 +38,7 @@ async function main() {
   try {
     const { cities } = await vite.ssrLoadModule("/src/features/localfind/data/cities.ts");
     const { categories } = await vite.ssrLoadModule("/src/features/localfind/data/categories.ts");
-    const { businesses } = await vite.ssrLoadModule("/src/features/localfind/data/businesses.ts");
+    const { businesses, businessBelongsToCategory } = await vite.ssrLoadModule("/src/features/localfind/data/businesses.ts");
     const { listingPath, businessPath, ARUGINIL_HOME_PATH } = await vite.ssrLoadModule(
       "/src/features/localfind/shared/utils/seo.ts"
     );
@@ -57,7 +57,7 @@ async function main() {
         // LocationCategory.jsx) isn't something worth asking Google to
         // crawl/index via the sitemap.
         const hasBusinesses = businesses.some(
-          (b) => b.citySlug === city.slug && b.categorySlug === categorySlug
+          (b) => b.citySlug === city.slug && businessBelongsToCategory(b, categorySlug)
         );
         if (!hasBusinesses) continue;
         entries.push(

@@ -1,22 +1,11 @@
 import type { Business } from "../../../../types/business";
 
-export const karaikudiWeddingHallsBusinesses: Business[] = [
-  {
-    id: "karaikudi-wedding-photography-melody-photography",
-    name: "Melody Photography",
-    slug: "melody-photography",
-    city: "Karaikudi",
-    citySlug: "karaikudi",
-    category: "Wedding Photography",
-    categorySlug: "wedding-photography",
-    description: "Melody Photography offers professional photography services in Karaikudi..",
-    services: ["Wedding Photography", "Candid Photography", "Videography", "Pre-Wedding Shoot"],
-    address: null,   // or a verified real address
-      phone: "+91 97424 13502",    // or a verified real phone number
-    email: null,
-    website: null,
-    image: "/assets/localfind/businesses/karaikudi-photgraphy/melody-photography/melody-hero-1.jpeg", // category fallback, or a real image URL
-    openingHours: null,
-    featured: false,
-  },
-];
+// Melody Photography used to have its own separate record here
+// (primary category "wedding-photography"), duplicating the business
+// that's now correctly listed once at
+// data/cities/karaikudi/photography-media/photo-studio.ts, with
+// "wedding-photography" as a secondary category via `categorySlugs`.
+// That's the one real business record — see this project's multi-
+// category architecture (categorySlugs) for why a business doesn't
+// need a separate record per category it genuinely offers.
+export const karaikudiWeddingHallsBusinesses: Business[] = [];

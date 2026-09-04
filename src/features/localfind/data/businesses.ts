@@ -6,4 +6,4 @@
  * every existing component's import keeps working unchanged.
  */
 export { businesses } from "../../../data/businesses";
-export { getBusinessesByCityAndCategory, getBusinessBySlug } from "../../../utils/businessResolver";
+export { getBusinessesByCityAndCategory, getBusinessBySlug, businessBelongsToCategory } from "../../../utils/businessResolver";

@@ -11,6 +11,7 @@ import { categories } from "../data/categories";
 import { cities } from "../data/cities";
 import { businesses } from "../data/businesses";
 import { listingPath } from "../shared/utils/seo";
+import { businessBelongsToCategory } from "../shared/utils/queries";
 import { useToasts } from "../shared/hooks/useToasts";
 
 import LocalFindPageShell from "../shared/components/LocalFindPageShell";
@@ -101,7 +102,7 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {categories.map((cat) => {
-            const businessCount = businesses.filter((b) => b.categorySlug === cat.slug).length;
+            const businessCount = businesses.filter((b) => businessBelongsToCategory(b, cat.slug)).length;
             return (
               <CategoryCard
                 key={cat.slug}

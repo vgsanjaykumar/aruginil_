@@ -16,10 +16,12 @@ export const karaikudiPhotoStudioBusinesses: Business[] = [
 
   categorySlug: "photo-studio",
 
+  categorySlugs: ["wedding-photography", "photography-services"],
+
   description:
     "Melody Photography offers professional photography services in Karaikudi.",
 
-  services: ["Photography"],
+  services: ["Photography", "Wedding Photography", "Candid Photography", "Videography", "Pre-Wedding Shoot"],
 
   address: null,
 

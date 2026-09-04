@@ -134,10 +134,10 @@ function renderBusinessSnapshot(business, category, city, related, businessPath,
   </div>`;
 }
 
-function renderHomeSnapshot(cities, categories, businesses, listingPath) {
+function renderHomeSnapshot(cities, categories, businesses, listingPath, businessBelongsToCategory) {
   const categoryLinks = categories
     .map((cat) => {
-      const count = businesses.filter((b) => b.categorySlug === cat.slug).length;
+      const count = businesses.filter((b) => businessBelongsToCategory(b, cat.slug)).length;
       return `<li><a href="${listingPath("karaikudi", cat.slug)}">${escapeHtml(cat.pluralName)}</a> (${count})</li>`;
     })
     .join("\n");
@@ -189,7 +189,7 @@ async function main() {
   try {
     const { cities } = await vite.ssrLoadModule("/src/features/localfind/data/cities.ts");
     const { categories } = await vite.ssrLoadModule("/src/features/localfind/data/categories.ts");
-    const { businesses, getBusinessesByCityAndCategory } = await vite.ssrLoadModule(
+    const { businesses, getBusinessesByCityAndCategory, businessBelongsToCategory } = await vite.ssrLoadModule(
       "/src/features/localfind/data/businesses.ts"
     );
     const seoUtils = await vite.ssrLoadModule("/src/features/localfind/shared/utils/seo.ts");
@@ -215,7 +215,7 @@ async function main() {
       const html = writeHtmlDocument(baseHtml, {
         title: seo.title,
         headExtra: renderHeadTags(seo, [generateWebsiteJsonLd(), generateOrganizationJsonLd()]),
-        bodySnapshot: renderHomeSnapshot(cities, categories, businesses, listingPath),
+        bodySnapshot: renderHomeSnapshot(cities, categories, businesses, listingPath, businessBelongsToCategory),
       });
       const outDir = path.join(distDir, ARUGINIL_HOME_PATH.replace(/^\//, ""));
       await fs.mkdir(outDir, { recursive: true });

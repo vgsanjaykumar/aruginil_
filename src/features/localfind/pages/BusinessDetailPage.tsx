@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Clock, MapPin, Phone, Globe, Navigation as NavigationIcon, Info } from "lucide-react";
+import { Clock, MapPin, Phone, Globe, Navigation as NavigationIcon, Info, ExternalLink } from "lucide-react";
 import type { Business, Category, City } from "../types";
 import { getBusinessBreadcrumbs, listingPath } from "../shared/utils/seo";
 import { useToasts } from "../shared/hooks/useToasts";
@@ -79,7 +79,7 @@ export default function BusinessDetailPage({ business, category, city }: Busines
                 </a>
               ) : (
                 <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
+                  href={business.googleUrl ?? `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-1.5 border border-black/10 rounded-xl h-10 text-sm font-semibold text-lf-ink hover:border-black/20 transition-colors"
@@ -198,8 +198,24 @@ export default function BusinessDetailPage({ business, category, city }: Busines
               </a>
             </p>
           )}
+          {business.instagramUrl && (
+            <p className="flex items-center gap-2.5 text-sm text-lf-ink">
+              <ExternalLink size={16} style={{ color: category.primaryColor }} />
+              <a href={business.instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                Instagram
+              </a>
+            </p>
+          )}
+          {business.facebookUrl && (
+            <p className="flex items-center gap-2.5 text-sm text-lf-ink">
+              <ExternalLink size={16} style={{ color: category.primaryColor }} />
+              <a href={business.facebookUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                Facebook
+              </a>
+            </p>
+          )}
           <a
-            href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
+            href={business.googleUrl ?? `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 text-sm font-semibold pt-1"
@@ -207,7 +223,7 @@ export default function BusinessDetailPage({ business, category, city }: Busines
           >
             <NavigationIcon size={16} /> Get directions
           </a>
-          {!business.phone && !business.address && !business.website && (
+          {!business.phone && !business.address && !business.website && !business.googleUrl && !business.instagramUrl && !business.facebookUrl && (
             <p className="flex items-start gap-2 text-xs text-lf-ink-soft pt-1">
               <Info size={14} className="shrink-0 mt-0.5" />
               Detailed contact information for this business hasn't been verified yet.
