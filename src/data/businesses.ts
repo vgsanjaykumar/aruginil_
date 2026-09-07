@@ -1,6 +1,7 @@
 import type { Business } from "../types/business";
 
 import { aranthangiBeautyFashionBusinesses } from "./cities/aranthangi/beauty-fashion";
+import { aranthangiConstructionBuildingBusinesses } from "./cities/aranthangi/construction-building";
 import { coimbatoreElectronicsServicesBusinesses } from "./cities/coimbatore/electronics-services";
 import { devakottaiBeautyFashionBusinesses } from "./cities/devakottai/beauty-fashion";
 import { devakottaiConstructionBuildingBusinesses } from "./cities/devakottai/construction-building";
@@ -38,6 +39,7 @@ import { karaikudiWeddingEventsBusinesses } from "./cities/karaikudi/wedding-eve
  */
 export const businesses: Business[] = [
   ...aranthangiBeautyFashionBusinesses,
+  ...aranthangiConstructionBuildingBusinesses,
   ...coimbatoreElectronicsServicesBusinesses,
   ...devakottaiBeautyFashionBusinesses,
   ...devakottaiConstructionBuildingBusinesses,
