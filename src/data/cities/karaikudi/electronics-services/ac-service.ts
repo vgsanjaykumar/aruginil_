@@ -41,4 +41,26 @@ export const karaikudiAcServiceBusinesses: Business[] = [
     openingHours: null,
     featured: false,
   },
+
+  {
+    id: "karaikudi-ac-service-2020-tech-solutions-ac-service",
+    name: "2020 Tech Solutions AC Service",
+    slug: "2020-tech-solutions-ac-service",
+    city: "Karaikudi",
+    citySlug: "karaikudi",
+    category: "AC Service",
+    categorySlug: "ac-service",
+    description:
+      "2020 Tech Solutions AC Service provides air conditioning services at Kalanivasal, Karaikudi.",
+    services: ["AC Service"],
+    address: "143/3, Joseph School Opposite, Kottaiyur Road, Kalanivasal, Karaikudi",
+    phone: "9952415242",
+    email: null,
+    website: null,
+    googleUrl: "https://www.google.com/maps?q=10.084608,78.7722858",
+    verificationSource: "thebusinessads.com directory listing, cross-checked with Google Maps location",
+    image: "/assets/localfind/ac-service.svg",
+    openingHours: null,
+    featured: false,
+  },
 ];
