@@ -9,6 +9,7 @@ import { devakottaiElectronicsServicesBusinesses } from "./cities/devakottai/ele
 import { devakottaiWaterCleaningBusinesses } from "./cities/devakottai/water-cleaning";
 import { dindigulBeautyFashionBusinesses } from "./cities/dindigul/beauty-fashion";
 import { dindigulConstructionBuildingBusinesses } from "./cities/dindigul/construction-building";
+import { dindigulWaterCleaningBusinesses } from "./cities/dindigul/water-cleaning";
 import { dindigulWoodFurnitureBusinesses } from "./cities/dindigul/wood-furniture";
 import { karaikudiBeautyFashionBusinesses } from "./cities/karaikudi/beauty-fashion";
 import { karaikudiConstructionBuildingBusinesses } from "./cities/karaikudi/construction-building";
@@ -47,6 +48,7 @@ export const businesses: Business[] = [
   ...devakottaiWaterCleaningBusinesses,
   ...dindigulBeautyFashionBusinesses,
   ...dindigulConstructionBuildingBusinesses,
+  ...dindigulWaterCleaningBusinesses,
   ...dindigulWoodFurnitureBusinesses,
   ...karaikudiBeautyFashionBusinesses,
   ...karaikudiConstructionBuildingBusinesses,
