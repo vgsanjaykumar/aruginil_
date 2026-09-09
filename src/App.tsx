@@ -3,7 +3,7 @@ import LocalFindLayout from "./layouts/LocalFindLayout";
 import Home from "./pages/localfind/Home";
 import LocationCategory from "./pages/localfind/LocationCategory";
 import BusinessDetail from "./pages/localfind/BusinessDetail";
-import NotFound from "./pages/localfind/NotFound";
+import NotFoundPage from "./NotFoundPage";
 
 /**
  * Aruginil — standalone local-business discovery application.
@@ -22,7 +22,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/:city/:category" element={<LocationCategory />} />
           <Route path="/:city/:category/:businessSlug" element={<BusinessDetail />} />
-          <Route path="*" element={<NotFound />} />
+
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
