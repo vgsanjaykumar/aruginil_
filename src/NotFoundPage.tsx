@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
+import Header from "./features/localfind/shared/components/Header";
 
 export default function NotFoundPage() {
   return (
-    <main className="min-h-screen bg-white flex items-center justify-center px-6">
+    <>
+     <Header onOpenMenu={() => {}} menuOpen={false} />
+        <main className="min-h-screen bg-white flex items-center justify-center px-6">
+     
       <div className="w-full max-w-xl text-center">
 
-        <p className="font-syne text-8xl sm:text-9xl font-extrabold tracking-tight text-neutral-900">
+        <p className="font-syne text-8xl sm:text-9xl font-extrabold tracking-tight text-purple-500">
           404
         </p>
 
@@ -20,7 +24,7 @@ export default function NotFoundPage() {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             to="/"
-            className="font-inter inline-flex items-center justify-center rounded-xl bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
+            className="font-inter inline-flex items-center justify-center rounded-xl bg-purple-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-purple-700"
           >
             Back to Home
           </Link>
@@ -28,7 +32,7 @@ export default function NotFoundPage() {
           <button
             type="button"
             onClick={() => window.history.back()}
-            className="font-inter inline-flex items-center justify-center rounded-xl border border-neutral-200 bg-white px-6 py-3 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-50"
+            className="font-inter inline-flex items-center justify-center rounded-xl border border-neutral-200 bg-purple-400 px-6 py-3 text-sm font-semibold text-white transition hover:bg-purple-300"
           >
             Go Back
           </button>
@@ -40,5 +44,7 @@ export default function NotFoundPage() {
 
       </div>
     </main>
+    </>
+
   );
 }
