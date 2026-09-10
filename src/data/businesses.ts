@@ -24,6 +24,7 @@ import { maduraiConstructionBuildingBusinesses } from "./cities/madurai/construc
 import { maduraiElectronicsServicesBusinesses } from "./cities/madurai/electronics-services";
 import { maduraiWaterCleaningBusinesses } from "./cities/madurai/water-cleaning";
 import { maduraiWoodFurnitureBusinesses } from "./cities/madurai/wood-furniture";
+import { melurWaterCleaningBusinesses } from "./cities/melur/water-cleaning";
 import { pudukkottaiElectronicsServicesBusinesses } from "./cities/pudukkottai/electronics-services";
 import { sivagangaElectronicsServicesBusinesses } from "./cities/sivaganga/electronics-services";
 import { sivagangaWaterCleaningBusinesses } from "./cities/sivaganga/water-cleaning";
@@ -65,6 +66,7 @@ export const businesses: Business[] = [
   ...maduraiElectronicsServicesBusinesses,
   ...maduraiWaterCleaningBusinesses,
   ...maduraiWoodFurnitureBusinesses,
+  ...melurWaterCleaningBusinesses,
   ...pudukkottaiElectronicsServicesBusinesses,
   ...sivagangaElectronicsServicesBusinesses,
   ...sivagangaWaterCleaningBusinesses,
